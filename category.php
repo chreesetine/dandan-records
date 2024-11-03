@@ -1,4 +1,5 @@
 <?php
+include 'connect.php';
 session_start();
 require_once('category_db.php');
 
@@ -205,6 +206,7 @@ if ($_SESSION['user_role'] !== 'admin') {
             </div>
 
             <div class="modal" id="addModal" style="display: none;">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1>Add Category</h1>
@@ -215,15 +217,17 @@ if ($_SESSION['user_role'] !== 'admin') {
                         <form method="POST" action="add_category.php" id="form">
                             <div class="form-group">
                                 <h3>Laundry Category</h3>
-                                <input type="text" class="form-control" placeholder="Create laundry category option" name="laundry_category_option" required>
+                                <input type="text" class="form-control" style="width:110%;" placeholder="Create laundry category option" name="laundry_category_option" required>
                             </div>
 
                             <button type="submit" class="btn btn-success">Submit</button>
                             <button type="button" class="btn btn-info">Clear</button>
                         </form>
                     </div>
-                </div> <!-- modal-content closing tag -->
-            </div> <!-- modal closing tag -->
+                </div><!-- modal-dialog closing tag -->
+            </div> <!-- modal-content closing tag -->
+            
+        </div> <!-- modal closing tag -->
 
             <div class="Archvmodal" id="archiveModal">
                 <div class="modal-cnt">
